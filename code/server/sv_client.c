@@ -1804,7 +1804,7 @@ void SV_ExecuteClientMessage( client_t *cl, msg_t *msg ) {
 			return;	// disconnect command
 		}
 	} while ( 1 );
-    
+
 	// read the usercmd_t
 	if ( c == clc_move ) {
 		SV_UserMove( cl, msg, qtrue );
