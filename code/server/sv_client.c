@@ -1695,6 +1695,13 @@ static void SV_UserMove( client_t *cl, msg_t *msg, qboolean delta ) {
 		if ( cmds[i].serverTime <= cl->lastUsercmd.serverTime ) {
 			continue;
 		}
+		
+		// disable knife
+		if (sv_disableKnife->integer &&
+            cmds[i].weapon == 1 && (cmds[i].buttons & BUTTON_ATTACK) ) {
+			continue;
+		}
+		
 		SV_ClientThink (cl, &cmds[ i ]);
 	}
 }
@@ -1797,7 +1804,7 @@ void SV_ExecuteClientMessage( client_t *cl, msg_t *msg ) {
 			return;	// disconnect command
 		}
 	} while ( 1 );
-
+    
 	// read the usercmd_t
 	if ( c == clc_move ) {
 		SV_UserMove( cl, msg, qtrue );

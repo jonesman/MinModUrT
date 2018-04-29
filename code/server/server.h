@@ -331,6 +331,8 @@ extern  cvar_t  *sv_colourNames;
 
 extern  cvar_t  *sv_hideCmds;
 
+extern  cvar_t  *sv_disableKnife;
+
 #ifdef USE_AUTH
 extern	cvar_t	*sv_authServerIP;
 extern  cvar_t  *sv_auth_engine;
