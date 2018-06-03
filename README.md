@@ -9,6 +9,8 @@ It contains all the original cvars and 5 more for control the mods added. All mo
  > set sv_infiniteWallJumps 0
 
  > set sv_nofallDamage 0
+ 
+ > set sv_disableKnife 1 (is 0 by default)
 
  > set sv_colourNames 0
  
